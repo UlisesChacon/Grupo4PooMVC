@@ -8,7 +8,7 @@ package utp.proyecto.vista;
  *
  * @author USULISES
  */
-public class ReservaVista extends javax.swing.JFrame {
+public class ReservaVista extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ReservaVista
