@@ -15,6 +15,7 @@ public class MenuVista extends javax.swing.JFrame {
      */
     public MenuVista() {
         initComponents();
+        this.setTitle("Sistema de Reservas de Habitaciones y reporte de consumo");
     }
 
     /**
@@ -26,74 +27,99 @@ public class MenuVista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktopPane = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
-        editMenu = new javax.swing.JMenu();
+        mnuinicio = new javax.swing.JMenu();
+        mnuhabitaciones = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
+        mnureservas = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        mnucaja = new javax.swing.JMenu();
+        mnuayuda = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        mnusalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fileMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/upt/proyecto/archivos/inicio.png"))); // NOI18N
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("Inicio");
-        menuBar.add(fileMenu);
+        mnuinicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utp/proyecto/archivos/logohotel2.png"))); // NOI18N
+        mnuinicio.setMnemonic('f');
+        mnuinicio.setText("HOTEL EL CONTINENTAL");
+        menuBar.add(mnuinicio);
 
-        editMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/upt/proyecto/archivos/habitacion.png"))); // NOI18N
-        editMenu.setMnemonic('e');
-        editMenu.setText("Habitaciones");
+        mnuhabitaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utp/proyecto/archivos/habitacion.png"))); // NOI18N
+        mnuhabitaciones.setMnemonic('e');
+        mnuhabitaciones.setText("Habitaciones");
 
         cutMenuItem.setMnemonic('t');
         cutMenuItem.setText("Agregar habitaciones");
-        editMenu.add(cutMenuItem);
+        cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cutMenuItemActionPerformed(evt);
+            }
+        });
+        mnuhabitaciones.add(cutMenuItem);
 
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Reporte de habitaciones");
-        editMenu.add(copyMenuItem);
+        copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyMenuItemActionPerformed(evt);
+            }
+        });
+        mnuhabitaciones.add(copyMenuItem);
 
-        menuBar.add(editMenu);
+        menuBar.add(mnuhabitaciones);
 
-        helpMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/upt/proyecto/archivos/reserva.png"))); // NOI18N
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Reservas");
+        mnureservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utp/proyecto/archivos/reserva.png"))); // NOI18N
+        mnureservas.setMnemonic('h');
+        mnureservas.setText("Reservas");
 
         contentMenuItem.setMnemonic('c');
         contentMenuItem.setText("Agregar clientes");
-        helpMenu.add(contentMenuItem);
+        mnureservas.add(contentMenuItem);
 
         aboutMenuItem.setMnemonic('a');
         aboutMenuItem.setText("Agregar reservacion");
-        helpMenu.add(aboutMenuItem);
+        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMenuItemActionPerformed(evt);
+            }
+        });
+        mnureservas.add(aboutMenuItem);
 
-        menuBar.add(helpMenu);
+        menuBar.add(mnureservas);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/upt/proyecto/archivos/caja.png"))); // NOI18N
-        jMenu1.setText("Caja");
-        menuBar.add(jMenu1);
+        mnucaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utp/proyecto/archivos/caja.png"))); // NOI18N
+        mnucaja.setText("Caja");
+        mnucaja.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mnucajaMouseClicked(evt);
+            }
+        });
+        menuBar.add(mnucaja);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/upt/proyecto/archivos/ayuda.png"))); // NOI18N
-        jMenu2.setText("Ayuda");
+        mnuayuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utp/proyecto/archivos/ayuda.png"))); // NOI18N
+        mnuayuda.setText("Ayuda");
 
         jMenuItem1.setText("Soporte");
-        jMenu2.add(jMenuItem1);
+        mnuayuda.add(jMenuItem1);
 
         jMenuItem2.setText("Pregunta frecuentes");
-        jMenu2.add(jMenuItem2);
+        mnuayuda.add(jMenuItem2);
 
-        menuBar.add(jMenu2);
+        menuBar.add(mnuayuda);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/upt/proyecto/archivos/salir.png"))); // NOI18N
-        jMenu3.setText("Salir");
-        menuBar.add(jMenu3);
+        mnusalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utp/proyecto/archivos/salir.png"))); // NOI18N
+        mnusalir.setText("Salir");
+        mnusalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mnusalirMouseClicked(evt);
+            }
+        });
+        menuBar.add(mnusalir);
 
         setJMenuBar(menuBar);
 
@@ -102,18 +128,53 @@ public class MenuVista extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
+        // TODO add your handling code here:
+        HabitacionVista form = new HabitacionVista();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+        
+        
+    }//GEN-LAST:event_cutMenuItemActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_copyMenuItemActionPerformed
+
+    private void mnusalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnusalirMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_mnusalirMouseClicked
+
+    private void mnucajaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnucajaMouseClicked
+        // TODO add your handling code here:
+        PagoVista form = new PagoVista();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_mnucajaMouseClicked
+
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+        // TODO add your handling code here:
+        ReservaVista form = new ReservaVista();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,16 +216,16 @@ public class MenuVista extends javax.swing.JFrame {
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenu editMenu;
-    private javax.swing.JMenu fileMenu;
-    private javax.swing.JMenu helpMenu;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu mnuayuda;
+    private javax.swing.JMenu mnucaja;
+    private javax.swing.JMenu mnuhabitaciones;
+    private javax.swing.JMenu mnuinicio;
+    private javax.swing.JMenu mnureservas;
+    private javax.swing.JMenu mnusalir;
     // End of variables declaration//GEN-END:variables
 
 }
